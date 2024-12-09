@@ -10,7 +10,7 @@ export const CharacterTable: React.FC<{ characters: Character[] }> = ({
   const { dispatch } = useCharacterContext();
 
   return (
-    <div className='overflow-x-auto border rounded-lg'>
+    <div className='overflow-auto max-h-96 border rounded-lg'>
       <table className='min-w-full divide-y divide-gray-200'>
         <TableHeader />
 
