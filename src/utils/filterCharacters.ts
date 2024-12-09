@@ -17,7 +17,10 @@ export function filterCharacters(
       isValid = false;
     }
 
-    if (species && character.species.toLowerCase() !== species.toLowerCase()) {
+    if (
+      species &&
+      !character.species.toLowerCase().includes(species.toLowerCase())
+    ) {
       isValid = false;
     }
 
