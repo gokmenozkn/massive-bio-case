@@ -7,6 +7,7 @@ import { ErrorMessage } from './ErrorMessage';
 import { FilterBar } from './FilterBar';
 import { LoadingSpinner } from './LoadingSpinner';
 import { Pagination } from './Pagination';
+import { sortCharacters } from '../utils/sortCharacters';
 
 export const CharacterList: React.FC = () => {
   const { state } = useCharacterContext();
@@ -16,19 +17,18 @@ export const CharacterList: React.FC = () => {
     state.pageSize
   );
 
+  // İsme göre sıralama
+  const sortedData = sortCharacters(data, state.sortOrder);
+
   // sayfa sayısı hesaplama
   const totalPages = totalPageNum(data, state.pageSize);
 
   // sayfa sınırı
   const startIndex = (state.currentPage - 1) * state.pageSize;
-  const dataToShow = paginatedData(data, startIndex, state.pageSize);
-
-  console.log('Paginated data:', dataToShow);
+  const dataToShow = paginatedData(sortedData, startIndex, state.pageSize); // Sayfada gösterilecek veri sayısına veriyi göre sayfalara böl
 
   return (
     <div className='max-w-7xl mx-auto px-4'>
-      {/* <h1 className='text-3xl font-bold mb-8'>Rick and Morty Characters</h1> */}
-
       <FilterBar />
 
       {isLoading && <LoadingSpinner />}
