@@ -26,27 +26,24 @@ export const FilterBar: React.FC = () => {
         placeholder='Search by name'
       />
 
-      {/* <FilterInput
-        label='Status'
-        value={state.filters.status || ''}
-        onChange={(value) => handleFilterChange('status', value)}
-        placeholder='alive, dead, or unknown'
-      /> */}
       {/* Change Status */}
-      <select
-        className='p-2 border rounded'
-        onChange={(e) =>
-          dispatch({
-            type: 'SET_FILTERS',
-            payload: { ...state.filters, status: e.target.value },
-          })
-        }
-      >
-        <option value=''>All status</option>
-        <option value='alive'>Alive</option>
-        <option value='dead'>Dead</option>
-        <option value='unknown'>Unknown</option>
-      </select>
+      <div className='flex flex-col'>
+        <label htmlFor="status" className='mb-1 text-sm font-medium'>Status</label>
+        <select
+          className='p-2 border rounded'
+          onChange={(e) =>
+            dispatch({
+              type: 'SET_FILTERS',
+              payload: { ...state.filters, status: e.target.value },
+            })
+          }
+        >
+          <option value=''>All status</option>
+          <option value='alive'>Alive</option>
+          <option value='dead'>Dead</option>
+          <option value='unknown'>Unknown</option>
+        </select>  
+      </div>
 
       <FilterInput
         label='Species'

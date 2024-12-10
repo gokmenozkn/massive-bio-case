@@ -6,19 +6,22 @@ interface CharacterState {
   filters: CharacterFilters;
   currentPage: number;
   pageSize: number;
+  sortOrder: 'asc' | 'desc';
 }
 
 type CharacterAction =
   | { type: 'SET_SELECTED_CHARACTER'; payload: Character | null }
   | { type: 'SET_FILTERS'; payload: CharacterFilters }
   | { type: 'SET_PAGE'; payload: number }
-  | { type: 'SET_PAGE_SIZE'; payload: number };
+  | { type: 'SET_PAGE_SIZE'; payload: number }
+  | { type: 'TOGGLE_SORT_ORDER' };
 
 const initialState: CharacterState = {
   selectedCharacter: null,
   filters: {},
   currentPage: 1,
   pageSize: 20,
+  sortOrder: 'asc',
 };
 
 const characterReducer = (
@@ -34,6 +37,11 @@ const characterReducer = (
       return { ...state, currentPage: action.payload };
     case 'SET_PAGE_SIZE':
       return { ...state, pageSize: action.payload, currentPage: 1 };
+    case 'TOGGLE_SORT_ORDER':
+      return {
+        ...state,
+        sortOrder: state.sortOrder === 'asc' ? 'desc' : 'asc',
+      };
     default:
       return state;
   }
