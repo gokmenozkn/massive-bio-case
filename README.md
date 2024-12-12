@@ -3,11 +3,11 @@
 "Rick and Morty Api", Typescript, React ve Context API kullanılarak yapılmış bir projedir.
 
 ## Proje Linki
-()[https://massive-bio-case-fawn.vercel.app/]
+https://massive-bio-case-fawn.vercel.app/
 
 ## Uygulama Hedefleri
 
-(Rick and Morty Api)[https://rickandmortyapi.com/]
+[Rick and Morty Api](https://rickandmortyapi.com/)
 
 Yukarıda bulunan api kullanılarak bir tablo yapmanız istenmektedir;
 - Tablo filtrelenebilir olmalıdır.
