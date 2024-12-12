@@ -1,50 +1,20 @@
-# React + TypeScript + Vite
+# Massive Bioinformatics Assesment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+"Rick and Morty Api", Typescript, React ve Context API kullanılarak yapılmış bir projedir.
 
-Currently, two official plugins are available:
+## Proje Linki
+()[https://massive-bio-case-fawn.vercel.app/]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Uygulama Hedefleri
 
-## Expanding the ESLint configuration
+(Rick and Morty Api)[https://rickandmortyapi.com/]
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Yukarıda bulunan api kullanılarak bir tablo yapmanız istenmektedir;
+- Tablo filtrelenebilir olmalıdır.
+- Tablo en az 250 adet sıra içermelidir.
+- Tablo içinde sayfalandırma yapmanız beklenmektedir.
+- Tablo içerisinde bulunan karakterlerden herhangi biri seçilir ise yani o sıraya
+tıklama işlemi yapılırsa tablonun altında detaylı bir görüntüsü oluşturulmalıdır. -
+Uygulamada React, JS yada TS kullanmanız beklenmektedir. - Tablo birden fazla
+filtre kabul edebilmeli. - Filtrelenen tablo bir veri göstermiyor ise uygun bir mesaj
+ile kullanıcıya belirtilmesi gereklidir.
