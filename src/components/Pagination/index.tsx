@@ -19,6 +19,7 @@ export const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
         }
         disabled={state.currentPage === 1}
         className='px-4 py-2 border rounded-md bg-white text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50'
+        data-testid="prevBtn"
       >
         Previous
       </button>
