@@ -11,9 +11,7 @@ import { sortCharacters } from '../utils/sortCharacters';
 
 export const CharacterList: React.FC = () => {
   const { state } = useCharacterContext();
-  const { data, isLoading, error } = useCharacters(
-    state.filters,
-  );
+  const { data, isLoading, error } = useCharacters(state.filters);
 
   // İsme göre sıralama
   const sortedData = sortCharacters(data, state.sortOrder);
@@ -34,7 +32,7 @@ export const CharacterList: React.FC = () => {
       {!isLoading && !error && dataToShow && (
         <>
           <CharacterTable characters={dataToShow} />
-          <Pagination totalPages={totalPages} />
+          <Pagination totalPages={totalPages} dataLength={dataToShow.length} />
           <CharacterDetail character={state.selectedCharacter} />
         </>
       )}
