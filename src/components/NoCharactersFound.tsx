@@ -6,7 +6,7 @@ interface Props {
 
 export const NoCharactersFound: React.FC<Props> = ({ message }) => {
   return (
-    <tr>
+    <tr data-testid="noCharFound">
       <td colSpan={5} className='text-center p-4 text-gray-500'>
         {message}
       </td>
