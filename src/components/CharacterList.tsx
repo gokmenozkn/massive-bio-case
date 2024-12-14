@@ -12,9 +12,7 @@ import { sortCharacters } from '../utils/sortCharacters';
 export const CharacterList: React.FC = () => {
   const { state } = useCharacterContext();
   const { data, isLoading, error } = useCharacters(
-    state.currentPage,
     state.filters,
-    state.pageSize
   );
 
   // İsme göre sıralama
