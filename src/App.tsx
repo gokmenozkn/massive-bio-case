@@ -1,12 +1,15 @@
 import { CharacterList } from './components/CharacterList';
+import { Navbar } from './components/Navbar';
 
 function App() {
   return (
-    <div className='container mx-auto p-4'>
-      <h1 className='text-3xl font-bold mb-8'>Rick and Morty Characters</h1>
-
-      <CharacterList />
-    </div>
+    <>
+      <Navbar />
+      
+      <main className='p-4'>
+        <CharacterList />
+      </main>
+    </>
   );
 }
 
